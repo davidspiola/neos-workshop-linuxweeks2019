@@ -1,0 +1,27 @@
+Neos.Workshop.Site:Text:
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.NodeTypes.BaseMixins:TextMixin': true
+
+  ui:
+    label: 'Linux Wochen Text'
+    icon: 'linux'
+    position: 300
+    group: 'linuxwochen'
+
+    inspector:
+      groups:
+        settings:
+          label: Settings
+          position: 4
+          icon: 'icon-gear'
+
+  properties:
+    animate:
+      type: boolean
+      defaultValue: false
+      ui:
+        label: 'Animate?'
+        reloadIfChanged: true
+        inspector:
+          group: 'settings'

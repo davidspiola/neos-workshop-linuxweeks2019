@@ -1,0 +1,37 @@
+prototype(Neos.Workshop.Site:Card) < prototype(Neos.Fusion:Component) {
+
+    content = null
+    image = null
+
+    renderer = afx`
+        <div class="container mx-auto py-4">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
+                <Neos.Neos:ImageTag attributes.class="w-full" asset={props.image} alt="Sunset in the mountains" />
+                <div class="px-6 py-4">
+                    {props.content}
+                </div>
+                <div class="px-6 py-4">
+                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
+                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
+                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+                </div>
+            </div>
+        </div>
+    `
+
+    // renderer = afx`
+    //     <div class="container mx-auto py-4">
+    //         <div class="max-w-sm rounded overflow-hidden shadow-lg mx-auto">
+    //             <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="Sunset in the mountains" />
+    //             <div class="px-6 py-4">
+    //                 {props.content}
+    //             </div>
+    //             <div class="px-6 py-4">
+    //                 <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
+    //                 <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
+    //                 <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+    //             </div>
+    //         </div>
+    //     </div>
+    // `
+}

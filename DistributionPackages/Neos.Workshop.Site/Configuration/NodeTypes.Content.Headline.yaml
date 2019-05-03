@@ -1,0 +1,10 @@
+Neos.Workshop.Site:Headline:
+  superTypes:
+    'Neos.Neos:Content': true
+    'Neos.NodeTypes.BaseMixins:TextMixin': true
+
+  ui:
+    label: 'Linux Wochen Headline'
+    icon: 'linux'
+    position: 300
+    group: 'linuxwochen'

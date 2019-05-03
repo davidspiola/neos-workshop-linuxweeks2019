@@ -1,0 +1,8 @@
+Neos:
+  Neos:
+    nodeTypes:
+      groups:
+        linuxwochen:
+          position: before general
+          label: 'Linuxwochen'
+          collapsed: false

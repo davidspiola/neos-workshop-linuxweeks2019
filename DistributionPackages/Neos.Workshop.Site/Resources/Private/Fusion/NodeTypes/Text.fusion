@@ -1,0 +1,58 @@
+prototype(Neos.Workshop.Site:HeadlineStepOne) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = afx`
+        <h1>Hello World</h1>
+    `
+}
+
+prototype(Neos.Workshop.Site:HeadlineStepTwo) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = afx`
+        <h1>
+            <Neos.Neos:Editable block={false} node={node} property='text' />
+        </h1>
+    `
+}
+
+
+prototype(Neos.Workshop.Site:Text) < prototype(Neos.Neos:ContentComponent) {
+
+    animate = ${node.context.inBackend ? false : q(node).property('animate')}
+
+    renderer = Neos.Workshop.Site:Renderer.Text {
+        tagName = 'p'
+        node = ${node}
+        property = 'text'
+        cssClass = ${'text-grey-darker text-base my-5 ' + (props.animate ? 'animated infinite pulse delay-2s' : '') }
+    }
+    
+}
+
+prototype(Neos.Workshop.Site:Headline) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = Neos.Workshop.Site:Renderer.Text {
+        tagName = 'h1'
+        node = ${node}
+        property = 'text'
+        class = 'font-bold text-xl mb-2 my-5'
+    }
+}
+
+prototype(Neos.Workshop.Site:Renderer.Text) < prototype(Neos.Fusion:Component) {
+
+    tagName = null
+    node = null
+    property = null
+    cssClass = null
+    block = false
+
+
+    renderer = Neos.Fusion:Tag {
+        tagName = ${props.tagName}
+        attributes.class = ${props.cssClass}
+        content = afx`
+            <Neos.Neos:Editable block={props.block} node={props.node} property={props.property} />
+        `
+    }
+}
+
